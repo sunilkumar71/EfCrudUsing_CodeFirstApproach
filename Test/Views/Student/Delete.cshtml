@@ -1,0 +1,45 @@
+﻿@model Test.Models.Student
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Student</h4>
+    <hr />
+   <table class="table table-border">
+       <tr>
+           <th>
+               @Html.DisplayNameFor(m => m.Id);
+           </th>
+          <th>
+           @Html.DisplayNameFor(m => m.Name);
+           </th>
+           <th>
+           @Html.DisplayNameFor(m => m.PhoneNumber);
+           </th>
+           <th>
+           @Html.DisplayNameFor(m => m.Email);
+           </th>
+           
+       </tr>
+       <tr>
+           <td>@Html.DisplayFor(m => m.Id)</td>
+           <td>@Html.DisplayFor(m => m.Name)</td>
+           <td>@Html.DisplayFor(m => m.PhoneNumber)</td>
+           <td>@Html.DisplayFor(m => m.Email)</td>
+       </tr>
+   </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

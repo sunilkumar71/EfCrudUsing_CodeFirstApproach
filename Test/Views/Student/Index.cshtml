@@ -1,0 +1,36 @@
+﻿@model  IEnumerable<Test.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Index</h1>
+
+<p>@Html.ActionLink("Create New","Create","",new {@class="form-group"})</p>
+<table class="table table-bordered table-dark">
+    <thead>
+    <tr>
+        <th>Id:</th>
+        <th>Name : </th> &nbsp;
+        <th>PhoneNumber : </th>&nbsp;
+        <th>Email : </th>
+        <th>action</th>
+    </tr>
+     </thead>
+
+    @{ 
+        foreach(var item in Model)
+        {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Email</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { Id = item.Id })
+                        @Html.ActionLink("Details", "Details", new { Id = item.Id })
+                        @Html.ActionLink("Delete", "Delete", new { Id = item.Id }, new { onclick = "return confirm('Are you sure of deleting the record?')" })
+                    </td>
+                </tr>
+        }
+    }
+</table>

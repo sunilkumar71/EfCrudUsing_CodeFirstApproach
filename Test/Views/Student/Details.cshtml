@@ -1,0 +1,70 @@
+﻿@model Test.Models.Student
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<!--..
+<table>
+    <thead>
+        <tr>
+            <th> Id: </th>
+            <th>Name: </th> &nbsp;
+            <th>PhoneNumber: </th>&nbsp;
+            <th>Email: </th>
+            <th></th>
+        </tr>
+    </thead>
+
+   // @{
+     //   foreach (var item in Model)
+    //   {
+         //   <tr>
+              //  <td>@item.Id</td>
+                //<td>@item.Name</td>
+                //<td>@item.PhoneNumber</td>
+                //<td>@item.Email</td>
+           // </tr>
+      //  }
+    }
+</table>
+**//
+-->
+
+
+
+<table border="1" align="center" class="table table-bordered">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Id)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Email)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(m => m.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.PhoneNumber)
+        </td>
+
+    </tr>
+   
+
+
+</table>
