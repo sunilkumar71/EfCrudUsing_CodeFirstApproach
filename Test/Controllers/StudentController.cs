@@ -62,6 +62,8 @@ namespace Test.Controllers
         {
             var std = Db.Students.Where(x => x.Id == id).FirstOrDefault();
             return View(std);
+            //
+            //
         }
 
         [HttpPost]
